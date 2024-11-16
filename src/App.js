@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { NativeBaseProvider } from "native-base";
+
 
 function App() {
+
+  const food = ["potato", "tomato", "banana"]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NativeBaseProvider>
+      <div>
+        <h1>Food</h1>
+        <ul>
+          {food.map((food) => (
+            <li key={food}>{food}</li>
+          ))}
+        </ul>
+      </div>
+    </NativeBaseProvider>
   );
 }
 
