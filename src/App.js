@@ -3,7 +3,7 @@ import Routes from "./routes"
 
 function App() {
 
-  const food = ["potato", "tomato", "banana"]
+
   return (
     <NativeBaseProvider>
       <Routes />
