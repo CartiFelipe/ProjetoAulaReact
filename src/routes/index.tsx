@@ -5,18 +5,18 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import Home from "../views/home";
-import Settings from "../views/settings";
-import Signin from "../views/signin";
-import Signup from "../views/signup";
-import Layout from "../views/layout";
+import { Home, Settings, Signin, Signup, Layout, Forms, Dashboard } from "../views";
+import { handleProtection } from "../services/Authentication";
 const route = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route index element={<Home />} />
-      <Route element={<Settings />} path="/settings" />
-      <Route element={<Signin />} path="/signin" />
-      <Route element={<Signup />} path="/signup" />
+      <Route index element={<Home />} loader={() => handleProtection()} />
+      <Route element={<Settings />} path="settings" loader={() => handleProtection()} />
+      <Route element={<Signup />} path="signup" loader={() => handleProtection()} />
+      <Route element={<Signin />} path="signin" />
+      <Route element={<Forms />} path=":type/:id" loader={() => handleProtection()} />
+      <Route element={<Forms />} path="new/:type" loader={() => handleProtection()} />
+      <Route element={<Dashboard />} path="dashboard" loader={() => handleProtection()} />
     </Route>
   )
 );
