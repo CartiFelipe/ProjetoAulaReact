@@ -1,7 +1,12 @@
 import Routes from "./routes";
+import AppProvider from "./Context";
 
 function App() {
-  return <Routes />;
+  return (
+    <AppProvider>
+      <Routes />
+    </AppProvider>
+  );
 }
 
 export default App;
