@@ -1,13 +1,10 @@
+import { DateTimePicker, FloatButton, IconButton, SnackBar } from "../../components";
 import { useAppContext } from "../../Context";
-import { Alert, Avatar, Box } from "../../components";
+import { Alert, Avatar, Box, Card, CheckBox, DatePicker } from "../../components";
 const index = () => {
-  // const { changeLanguage } = useAppContext();
-
-  // changeLanguage("pt-BR");
-
   return (
     <div>
-      <h1>Home</h1>
+      <SnackBar message="Tarefa completa" autoHidenDuration={1000} />
     </div>
   );
 };
